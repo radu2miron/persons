@@ -27,7 +27,7 @@ public class Persons {
 
     public static void main(String[] args) throws ParseException {
         try {
-            UIManager.setLookAndFeel(new FlatDarculaLaf());
+            UIManager.setLookAndFeel(new FlatDarkLaf());
         } catch (Exception ex) {
             ex.printStackTrace();
         }

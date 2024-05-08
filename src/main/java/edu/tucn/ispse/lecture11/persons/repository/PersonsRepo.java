@@ -5,14 +5,21 @@
 package edu.tucn.ispse.lecture11.persons.repository;
 
 import edu.tucn.ispse.lecture11.persons.model.Person;
+import java.util.Set;
 
 /**
  *
  * @author radu
  */
 public interface PersonsRepo {
+
     void create(Person person);
+
     Person read(String idNumber);
+
     void update(Person person);
+
     void delete(String idNumber);
+
+    Set<String> findAllIds();
 }

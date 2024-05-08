@@ -12,6 +12,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
+import java.util.Arrays;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -82,6 +85,14 @@ public class PersonsRepoJsonFileImpl implements PersonsRepo {
         }
     }
 
+    @Override
+    public Set<String> findAllIds() {
+        return Arrays.asList(REPO.list()).stream()
+                .filter(f->f.endsWith(".json"))
+                .map(f->f.replaceAll("\\.json$", ""))
+                .collect(Collectors.toSet());
+    }
+    
     public static PersonsRepo getINSTANCE() {
         return INSTANCE;
     }

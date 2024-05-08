@@ -13,8 +13,12 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+import javax.swing.ListModel;
 
 /**
  *
@@ -47,23 +51,59 @@ public class PersonsView extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        idNumTf = new javax.swing.JTextField();
-        firstNameTf = new javax.swing.JTextField();
+        idNumCTf = new javax.swing.JTextField();
+        firstNameCTf = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        lastNameTf = new javax.swing.JTextField();
-        dateOfBirthTf = new javax.swing.JTextField();
+        lastNameCTf = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        streetTf = new javax.swing.JTextField();
-        cityTf = new javax.swing.JTextField();
-        countryTf = new javax.swing.JTextField();
+        streetCTf = new javax.swing.JTextField();
+        cityCTf = new javax.swing.JTextField();
+        countryCTf = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        dateOfBirthCDc = new com.toedter.calendar.JDateChooser();
         jPanel3 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        idNumRTf = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        firstNameRTf = new javax.swing.JTextField();
+        lastNameRTf = new javax.swing.JTextField();
+        dateOfBirthRDc = new com.toedter.calendar.JDateChooser();
+        streetRTf = new javax.swing.JTextField();
+        cityRTf = new javax.swing.JTextField();
+        countryRTf = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        idList = new javax.swing.JList<>();
+        listButton = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        idNumUTf = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        firstNameUTf = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        lastNameUTf = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        dateOfBirthUDc = new com.toedter.calendar.JDateChooser();
+        jLabel21 = new javax.swing.JLabel();
+        streetUTf = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        cityUTf = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        countryUTf = new javax.swing.JTextField();
+        findButton = new javax.swing.JButton();
+        updateButton = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        idNumDTf = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Persons Manager App");
@@ -111,6 +151,12 @@ public class PersonsView extends javax.swing.JFrame {
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
+        jTabbedPane1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane1StateChanged(evt);
+            }
+        });
+
         jLabel2.setText("Id Number:");
 
         jLabel3.setText("First Name:");
@@ -124,38 +170,25 @@ public class PersonsView extends javax.swing.JFrame {
 
         jLabel4.setText("Last Name:");
 
-        lastNameTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lastNameTfActionPerformed(evt);
-            }
-        });
-
         jLabel5.setText("Date of Birth:");
 
         jLabel6.setText("Street:");
 
         jLabel7.setText("City:");
 
-        jLabel8.setText("Country");
+        jLabel8.setText("Country:");
 
-        jFormattedTextField1.setText("jFormattedTextField1");
-        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField1ActionPerformed(evt);
-            }
-        });
+        dateOfBirthCDc.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
@@ -164,18 +197,16 @@ public class PersonsView extends javax.swing.JFrame {
                             .addComponent(jLabel6)
                             .addComponent(jLabel7)
                             .addComponent(jLabel8))
-                        .addGap(42, 42, 42)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(countryTf)
-                            .addComponent(idNumTf)
-                            .addComponent(firstNameTf)
-                            .addComponent(lastNameTf)
-                            .addComponent(dateOfBirthTf, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
-                            .addComponent(streetTf, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
-                            .addComponent(cityTf, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(countryCTf, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lastNameCTf, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(streetCTf, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cityCTf, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(firstNameCTf)
+                            .addComponent(idNumCTf)
+                            .addComponent(dateOfBirthCDc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(220, 220, 220))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,35 +214,30 @@ public class PersonsView extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(idNumTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(idNumCTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(firstNameTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(firstNameCTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(lastNameTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(dateOfBirthTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel4)
+                    .addComponent(lastNameCTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(dateOfBirthCDc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
-                    .addComponent(streetTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(streetCTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cityTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cityCTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(countryTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(countryCTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addGap(31, 31, 31)
                 .addComponent(jButton1)
@@ -220,44 +246,264 @@ public class PersonsView extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Create", jPanel2);
 
+        jLabel9.setText("Id Number:");
+
+        jLabel10.setText("First Name:");
+
+        jLabel11.setText("Last Name:");
+
+        jLabel12.setText("Date of Birth:");
+
+        jLabel13.setText("Street:");
+
+        jLabel14.setText("City:");
+
+        jLabel15.setText("Country:");
+
+        jButton2.setText("Find");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        firstNameRTf.setEditable(false);
+
+        lastNameRTf.setEditable(false);
+
+        dateOfBirthRDc.setBackground(new java.awt.Color(255, 255, 255));
+        dateOfBirthRDc.setEnabled(false);
+
+        streetRTf.setEditable(false);
+
+        cityRTf.setEditable(false);
+
+        countryRTf.setEditable(false);
+
+        jScrollPane1.setViewportView(idList);
+
+        listButton.setText("List IDs");
+        listButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 641, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel15))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(cityRTf, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(streetRTf, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(dateOfBirthRDc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                            .addComponent(lastNameRTf, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(firstNameRTf, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(idNumRTf, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(countryRTf))))
+                .addGap(73, 73, 73)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(listButton, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(idNumRTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addComponent(firstNameRTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addComponent(lastNameRTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addComponent(dateOfBirthRDc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13)
+                            .addComponent(streetRTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cityRTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(countryRTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15)))
+                    .addComponent(jScrollPane1))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(listButton))
+                .addGap(16, 16, 16))
         );
 
-        jTabbedPane1.addTab("tab2", jPanel3);
+        jTabbedPane1.addTab("Read", jPanel3);
+
+        jLabel17.setText("Id Number:");
+
+        jLabel18.setText("First Name:");
+
+        jLabel19.setText("Last Name:");
+
+        jLabel20.setText("Date of Birth:");
+
+        dateOfBirthUDc.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel21.setText("Street:");
+
+        jLabel22.setText("City:");
+
+        jLabel23.setText("Country");
+
+        findButton.setText("Find");
+        findButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                findButtonActionPerformed(evt);
+            }
+        });
+
+        updateButton.setText("Update");
+        updateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 641, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(findButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel21)
+                            .addComponent(jLabel22)
+                            .addComponent(jLabel23))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(countryUTf, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lastNameUTf, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(streetUTf, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cityUTf, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(firstNameUTf)
+                            .addComponent(idNumUTf)
+                            .addComponent(dateOfBirthUDc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE))
+                        .addGap(220, 220, 220))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(idNumUTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel18)
+                    .addComponent(firstNameUTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel19)
+                    .addComponent(lastNameUTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel20)
+                    .addComponent(dateOfBirthUDc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel21)
+                    .addComponent(streetUTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cityUTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(countryUTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23))
+                .addGap(36, 36, 36)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(findButton)
+                    .addComponent(updateButton))
+                .addGap(15, 15, 15))
         );
 
-        jTabbedPane1.addTab("tab3", jPanel4);
+        jTabbedPane1.addTab("Update", jPanel4);
+
+        jLabel16.setText("Id Number:");
+
+        jButton3.setText("Delete");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 641, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addGap(18, 18, 18)
+                        .addComponent(idNumDTf, javax.swing.GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE)
+                        .addGap(220, 220, 220))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(idNumDTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton3)
+                .addContainerGap(214, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab4", jPanel5);
+        jTabbedPane1.addTab("Delete", jPanel5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -282,59 +528,264 @@ public class PersonsView extends javax.swing.JFrame {
         personsRepo = PersonsRepoMapImpl.getINSTANCE();
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String idNum = idNumTf.getText();
-        String fName = firstNameTf.getText();
-        String lName = lastNameTf.getText();
-        String dob = dateOfBirthTf.getText();
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        Date dateOfBirth = null;
-        try {
-            dateOfBirth = df.parse(dob);
-        } catch (ParseException ex) {
-            Logger.getLogger(PersonsView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        String street = streetTf.getText();
-        String city = cityTf.getText();
-        String country = countryTf.getText();
-        
-        Address address = new Address(street, city, country);
-        Person person = new Person(idNum, fName, lName, dateOfBirth, address);
-        personsRepo.create(person);
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void lastNameTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lastNameTfActionPerformed
-
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         personsRepo = PersonsRepoJsonFileImpl.getINSTANCE();
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
-    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String idNum = idNumRTf.getText();
 
-  
+        if (!idNum.isEmpty()) {
+            try {
+                Person person = personsRepo.read(idNum);
+                firstNameRTf.setText(person.firstName());
+                lastNameRTf.setText(person.lastName());
+                dateOfBirthRDc.setDate(person.dateOfBirth());
+                streetRTf.setText(person.address().street());
+                cityRTf.setText(person.address().city());
+                countryRTf.setText(person.address().country());
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(PersonsView.this,
+                        e.getMessage(),
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(PersonsView.this,
+                    "Provide an ID Number!",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String idNum = idNumCTf.getText();
+        String fName = firstNameCTf.getText();
+        String lName = lastNameCTf.getText();
+        Date dateOfBirth = dateOfBirthCDc.getDate();
+        String street = streetCTf.getText();
+        String city = cityCTf.getText();
+        String country = countryCTf.getText();
+
+        if (idNum.isEmpty() || fName.isEmpty() || lName.isEmpty() || dateOfBirth == null
+                || street.isEmpty() || city.isEmpty() || country.isEmpty()) {
+            JOptionPane.showMessageDialog(PersonsView.this,
+                    "Fill in all the fields!",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        } else {
+            Address address = new Address(street, city, country);
+            Person person = new Person(idNum, fName, lName, dateOfBirth, address);
+
+            try {
+                personsRepo.create(person);
+                JOptionPane.showMessageDialog(PersonsView.this,
+                        "Personal data successfully saved",
+                        "Success",
+                        JOptionPane.INFORMATION_MESSAGE);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(PersonsView.this,
+                        e.getMessage(),
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            } finally {
+                idNumCTf.setText("");
+                firstNameCTf.setText("");
+                lastNameCTf.setText("");
+                dateOfBirthCDc.setDate(null);
+                streetCTf.setText("");
+                cityCTf.setText("");
+                countryCTf.setText("");
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        String idNum = idNumDTf.getText();
+
+        if (!idNum.isEmpty()) {
+            try {
+                personsRepo.delete(idNum);
+                JOptionPane.showMessageDialog(PersonsView.this,
+                        "Personal data successfully deleted",
+                        "Success",
+                        JOptionPane.INFORMATION_MESSAGE);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(PersonsView.this,
+                        e.getMessage(),
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            } finally {
+                idNumDTf.setText("");
+            }
+        } else {
+            JOptionPane.showMessageDialog(PersonsView.this,
+                    "Provide an ID Number!",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
+        idNumRTf.setText("");
+        firstNameRTf.setText("");
+        lastNameRTf.setText("");
+        dateOfBirthRDc.setDate(null);
+        streetRTf.setText("");
+        cityRTf.setText("");
+        countryRTf.setText("");
+        idList.setModel(new DefaultListModel<>());
+
+        updateButton.setEnabled(false);
+        idNumUTf.setEditable(true);
+        idNumUTf.setText("");
+        firstNameUTf.setText("");
+        lastNameUTf.setText("");
+        dateOfBirthUDc.setDate(null);
+        streetUTf.setText("");
+        cityUTf.setText("");
+        countryUTf.setText("");
+
+        idList.addListSelectionListener(e -> {
+            if (!e.getValueIsAdjusting()) {
+                idNumRTf.setText(idList.getSelectedValue());
+                firstNameRTf.setText("");
+                lastNameRTf.setText("");
+                dateOfBirthRDc.setDate(null);
+                streetRTf.setText("");
+                cityRTf.setText("");
+                countryRTf.setText("");
+            }
+        });
+
+    }//GEN-LAST:event_jTabbedPane1StateChanged
+
+    private void findButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_findButtonActionPerformed
+        String idNum = idNumUTf.getText();
+
+        if (!idNum.isEmpty()) {
+            try {
+                Person person = personsRepo.read(idNum);
+                firstNameUTf.setText(person.firstName());
+                lastNameUTf.setText(person.lastName());
+                dateOfBirthUDc.setDate(person.dateOfBirth());
+                streetUTf.setText(person.address().street());
+                cityUTf.setText(person.address().city());
+                countryUTf.setText(person.address().country());
+                updateButton.setEnabled(true);
+                idNumUTf.setEditable(false);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(PersonsView.this,
+                        e.getMessage(),
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(PersonsView.this,
+                    "Provide an ID Number!",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_findButtonActionPerformed
+
+    private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
+        String idNum = idNumUTf.getText();
+        String fName = firstNameUTf.getText();
+        String lName = lastNameUTf.getText();
+        Date dateOfBirth = dateOfBirthUDc.getDate();
+        String street = streetUTf.getText();
+        String city = cityUTf.getText();
+        String country = countryUTf.getText();
+
+        if (idNum.isEmpty() || fName.isEmpty() || lName.isEmpty() || dateOfBirth == null
+                || street.isEmpty() || city.isEmpty() || country.isEmpty()) {
+            JOptionPane.showMessageDialog(PersonsView.this,
+                    "Fill in all the fields!",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        } else {
+            Address address = new Address(street, city, country);
+            Person person = new Person(idNum, fName, lName, dateOfBirth, address);
+
+            try {
+                personsRepo.update(person);
+                JOptionPane.showMessageDialog(PersonsView.this,
+                        "Personal data successfully updated",
+                        "Success",
+                        JOptionPane.INFORMATION_MESSAGE);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(PersonsView.this,
+                        e.getMessage(),
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            } finally {
+                idNumUTf.setText("");
+                firstNameUTf.setText("");
+                lastNameUTf.setText("");
+                dateOfBirthUDc.setDate(null);
+                streetUTf.setText("");
+                cityUTf.setText("");
+                countryUTf.setText("");
+                updateButton.setEnabled(false);
+                idNumUTf.setEditable(true);
+            }
+        }
+    }//GEN-LAST:event_updateButtonActionPerformed
+
+    private void listButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listButtonActionPerformed
+        Set<String> ids = personsRepo.findAllIds();
+        DefaultListModel<String> model = new DefaultListModel<>();
+        model.addAll(ids);
+        idList.setModel(model);
+    }//GEN-LAST:event_listButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JTextField cityTf;
-    private javax.swing.JTextField countryTf;
-    private javax.swing.JTextField dateOfBirthTf;
-    private javax.swing.JTextField firstNameTf;
-    private javax.swing.JTextField idNumTf;
+    private javax.swing.JTextField cityCTf;
+    private javax.swing.JTextField cityRTf;
+    private javax.swing.JTextField cityUTf;
+    private javax.swing.JTextField countryCTf;
+    private javax.swing.JTextField countryRTf;
+    private javax.swing.JTextField countryUTf;
+    private com.toedter.calendar.JDateChooser dateOfBirthCDc;
+    private com.toedter.calendar.JDateChooser dateOfBirthRDc;
+    private com.toedter.calendar.JDateChooser dateOfBirthUDc;
+    private javax.swing.JButton findButton;
+    private javax.swing.JTextField firstNameCTf;
+    private javax.swing.JTextField firstNameRTf;
+    private javax.swing.JTextField firstNameUTf;
+    private javax.swing.JList<String> idList;
+    private javax.swing.JTextField idNumCTf;
+    private javax.swing.JTextField idNumDTf;
+    private javax.swing.JTextField idNumRTf;
+    private javax.swing.JTextField idNumUTf;
     private javax.swing.JButton jButton1;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -342,9 +793,16 @@ public class PersonsView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField lastNameTf;
-    private javax.swing.JTextField streetTf;
+    private javax.swing.JTextField lastNameCTf;
+    private javax.swing.JTextField lastNameRTf;
+    private javax.swing.JTextField lastNameUTf;
+    private javax.swing.JButton listButton;
+    private javax.swing.JTextField streetCTf;
+    private javax.swing.JTextField streetRTf;
+    private javax.swing.JTextField streetUTf;
+    private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables
     private PersonsRepo personsRepo = PersonsRepoMapImpl.getINSTANCE();
 }

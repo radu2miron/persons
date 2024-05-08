@@ -6,7 +6,9 @@ package edu.tucn.ispse.lecture11.persons.repository;
 
 import edu.tucn.ispse.lecture11.persons.model.Person;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  *
@@ -17,9 +19,9 @@ public class PersonsRepoMapImpl implements PersonsRepo {
     private static PersonsRepo INSTANCE = new PersonsRepoMapImpl();
     private final Map<String, Person> persons = new HashMap<>();
 
-    private PersonsRepoMapImpl(){
+    private PersonsRepoMapImpl() {
     }
-    
+
     @Override
     public void create(Person person) {
         persons.put(person.idNumber(), person);
@@ -53,9 +55,13 @@ public class PersonsRepoMapImpl implements PersonsRepo {
             throw new IllegalArgumentException("Person doesn't exist");
         }
     }
-    
+
+    @Override
+    public Set<String> findAllIds() {
+        return persons.keySet();
+    }
+
     public static PersonsRepo getINSTANCE() {
         return INSTANCE;
     }
 }
-
