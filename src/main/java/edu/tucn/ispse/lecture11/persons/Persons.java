@@ -3,11 +3,13 @@
  */
 package edu.tucn.ispse.lecture11.persons;
 
+import com.formdev.flatlaf.FlatDarculaLaf;
 import com.formdev.flatlaf.FlatDarkLaf;
 import edu.tucn.ispse.lecture11.persons.model.Address;
 import edu.tucn.ispse.lecture11.persons.model.Person;
 import edu.tucn.ispse.lecture11.persons.repository.PersonsRepo;
 import edu.tucn.ispse.lecture11.persons.repository.PersonsRepoJsonFileImpl;
+import edu.tucn.ispse.lecture11.persons.view.PersonsView;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -25,10 +27,10 @@ public class Persons {
 
     public static void main(String[] args) throws ParseException {
         try {
-            UIManager.setLookAndFeel(new FlatDarkLaf());
+            UIManager.setLookAndFeel(new FlatDarculaLaf());
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        
+        new PersonsView().setVisible(true);
     }
 }

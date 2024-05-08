@@ -15,7 +15,7 @@ import java.util.Map;
 public class PersonsRepoMapImpl implements PersonsRepo {
 
     private static PersonsRepo INSTANCE = new PersonsRepoMapImpl();
-    private Map<String, Person> persons = new HashMap<>();
+    private final Map<String, Person> persons = new HashMap<>();
 
     private PersonsRepoMapImpl(){
     }

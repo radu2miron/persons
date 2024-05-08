@@ -38,7 +38,6 @@ public class PersonsRepoJsonFileImpl implements PersonsRepo {
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
-
     }
 
     @Override
