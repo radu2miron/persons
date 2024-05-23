@@ -9,6 +9,7 @@ import edu.tucn.ispse.lecture11.persons.model.Person;
 import edu.tucn.ispse.lecture11.persons.repository.PersonsRepo;
 import edu.tucn.ispse.lecture11.persons.repository.PersonsRepoJsonFileImpl;
 import edu.tucn.ispse.lecture11.persons.repository.PersonsRepoMapImpl;
+import edu.tucn.ispse.lecture11.persons.repository.PersonsRepoRemoteImpl;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -47,6 +48,7 @@ public class PersonsView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -127,6 +129,14 @@ public class PersonsView extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(jRadioButton3);
+        jRadioButton3.setText("Remote");
+        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -138,6 +148,8 @@ public class PersonsView extends javax.swing.JFrame {
                 .addComponent(jRadioButton1)
                 .addGap(18, 18, 18)
                 .addComponent(jRadioButton2)
+                .addGap(18, 18, 18)
+                .addComponent(jRadioButton3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -147,7 +159,8 @@ public class PersonsView extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(jRadioButton2)
+                    .addComponent(jRadioButton3))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -739,6 +752,11 @@ public class PersonsView extends javax.swing.JFrame {
         idList.setModel(model);
     }//GEN-LAST:event_listButtonActionPerformed
 
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+        // TODO add your handling code here:
+        personsRepo = PersonsRepoRemoteImpl.getINSTANCE();
+    }//GEN-LAST:event_jRadioButton3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
@@ -793,6 +811,7 @@ public class PersonsView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField lastNameCTf;
