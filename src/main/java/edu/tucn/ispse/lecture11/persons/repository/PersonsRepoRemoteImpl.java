@@ -5,6 +5,7 @@
 package edu.tucn.ispse.lecture11.persons.repository;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import edu.tucn.ispse.lecture11.persons.model.Person;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -24,7 +25,7 @@ public class PersonsRepoRemoteImpl implements PersonsRepo {
 
     private static final String BASE_URL = "http://localhost:8082/persons%s";
     private static final PersonsRepo INSTANCE = new PersonsRepoRemoteImpl();
-    private static final Gson GSON = new Gson();
+    private static final Gson GSON = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").create();;
 
     private PersonsRepoRemoteImpl() {
     }
@@ -36,9 +37,12 @@ public class PersonsRepoRemoteImpl implements PersonsRepo {
     @Override
     public void create(Person person) {
         try {
+            String personJson = GSON.toJson(person);
+            System.out.println(personJson);
             URI target = new URI(String.format(BASE_URL, ""));
             HttpRequest request = HttpRequest.newBuilder(target)
-                    .POST(HttpRequest.BodyPublishers.ofString(GSON.toJson(person))).build();
+                    .POST(HttpRequest.BodyPublishers.ofString(personJson))
+                    .header("Content-Type", "application/json").build();
             HttpResponse<String> response = HttpClient.newBuilder()
                     .build()
                     .send(request, HttpResponse.BodyHandlers.ofString());
@@ -80,7 +84,8 @@ public class PersonsRepoRemoteImpl implements PersonsRepo {
         try {
             URI target = new URI(String.format(BASE_URL, "/" + person.idNumber()));
             HttpRequest request = HttpRequest.newBuilder(target)
-                    .PUT(HttpRequest.BodyPublishers.ofString(GSON.toJson(person))).build();
+                    .PUT(HttpRequest.BodyPublishers.ofString(GSON.toJson(person)))
+                    .header("Content-Type", "application/json").build();
             HttpResponse<String> response = HttpClient.newBuilder()
                     .build()
                     .send(request, HttpResponse.BodyHandlers.ofString());
